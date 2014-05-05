@@ -12,7 +12,7 @@ type Address struct {
 	LastName           string `xml:"last-name,omitempty" json:"-"`
 	Company            string `xml:"company,omitempty" json:"-"`
 	StreetAddress      string `xml:"street-address,omitempty" json:"street_address"`
-	ExtendedAddress    string `xml:"extended-address,omitempty" json:"-"`
+	ExtendedAddress    string `xml:"extended-address,omitempty" json:"extended_address"`
 	Locality           string `xml:"locality,omitempty" json:"locality"`
 	Region             string `xml:"region,omitempty" json:"region"`
 	PostalCode         string `xml:"postal-code,omitempty" json:"postal_code"`
