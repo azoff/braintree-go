@@ -39,6 +39,8 @@ func (g *MerchantAccountGateway) Update(ma *MerchantAccount) (*MerchantAccount, 
 		return nil, err
 	}
 	switch resp.StatusCode {
+	case 200:
+		return resp.merchantAccount()
 	case 201:
 		return resp.merchantAccount()
 	}
