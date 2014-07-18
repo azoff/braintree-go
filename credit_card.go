@@ -15,7 +15,7 @@ type CreditCard struct {
 	UpdatedAt                 string             `schema:"-" json:"-" xml:"updated-at,omitempty"`
 	Bin                       string             `schema:"-" json:"-" xml:"bin,omitempty"`
 	CardType                  string             `schema:"-" json:"-" xml:"card-type,omitempty"`
-	CardholderName            string             `schema:"-" json:"-" xml:"cardholder-name,omitempty"`
+	CardholderName            string             `schema:"-" json:"name" xml:"cardholder-name,omitempty"`
 	CustomerLocation          string             `schema:"-" json:"-" xml:"customer-location,omitempty"`
 	ImageURL                  string             `schema:"-" json:"-" xml:"image-url,omitempty"`
 	Default                   bool               `schema:"-" json:"-" xml:"default,omitempty"`
