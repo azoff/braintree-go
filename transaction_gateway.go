@@ -69,6 +69,19 @@ func (g *TransactionGateway) Find(id string) (*Transaction, error) {
 	return nil, &invalidResponseError{resp}
 }
 
+// Release the escrow funds of a transaction.
+func (g *TransactionGateway) ReleaseFromEscrow(id string) (*Transaction, error) {
+	resp, err := g.execute("PUT", "transactions/"+id+"/release_from_escrow", nil)
+	if err != nil {
+		return nil, err
+	}
+	switch resp.StatusCode {
+	case 200:
+		return resp.transaction()
+	}
+	return nil, &invalidResponseError{resp}
+}
+
 // Search finds all transactions matching the search query.
 func (g *TransactionGateway) Search(query *SearchQuery) (*TransactionSearchResult, error) {
 	resp, err := g.execute("POST", "transactions/advanced_search", query)
