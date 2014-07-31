@@ -11,6 +11,7 @@ type Transaction struct {
 	PaymentMethodToken string              `xml:"payment-method-token,omitempty"`
 	MerchantAccountId  string              `xml:"merchant-account-id,omitempty"`
 	PlanId             string              `xml:"plan-id,omitempty"`
+	EscrowStatus       string              `xml:"escrow-status,omitempty"`
 	CreditCard         *CreditCard         `xml:"credit-card,omitempty"`
 	Customer           *Customer           `xml:"customer,omitempty"`
 	BillingAddress     *Address            `xml:"billing,omitempty"`
@@ -95,6 +96,7 @@ type Transactions struct {
 }
 
 type TransactionOptions struct {
+	HoldInEscrow                     bool `xml:"hold-in-escrow,omitempty"`
 	SubmitForSettlement              bool `xml:"submit-for-settlement,omitempty"`
 	StoreInVault                     bool `xml:"store-in-vault,omitempty"`
 	AddBillingAddressToPaymentMethod bool `xml:"add-billing-address-to-payment-method,omitempty"`
