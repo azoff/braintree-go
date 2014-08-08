@@ -19,7 +19,7 @@ type MerchantAccountPerson struct {
 	Phone       string   `xml:"phone,omitempty" json:"phone,omitempty" schema:"phone,omitempty"`
 	DateOfBirth string   `xml:"date-of-birth,omitempty" json:"dob,omitempty" schema:"dob,omitempty"`
 	SSN         string   `xml:"ssn,omitempty" json:"-" schema:"ssn,omitempty"`
-	SSNLast4         string   `xml:"ssn-last-4,omitempty" json:"ssn_last_4,omitempty" schema:"-"`
+	SSNLast4    string   `xml:"ssn-last-4,omitempty" json:"ssn_last_4,omitempty" schema:"-"`
 	Address     *Address `xml:"address,omitempty" json:"address,omitempty" schema:"address,omitempty"`
 }
 
@@ -31,12 +31,12 @@ type MerchantAccountBusiness struct {
 }
 
 type MerchantAccountFundingOptions struct {
-	Destination   string `xml:"destination,omitempty" json:"destination,omitempty" schema:"destination,omitempty"`
-	Email         string `xml:"email,omitempty" json:"email,omitempty" schema:"email,omitempty"`
-	MobilePhone   string `xml:"mobile-phone,omitempty" json:"mobile_phone,omitempty" schema:"mobile_phone,omitempty"`
-	AccountNumber string `xml:"account-number,omitempty" json:"-" schema:"account_number,omitempty"`
+	Destination        string `xml:"destination,omitempty" json:"destination,omitempty" schema:"destination,omitempty"`
+	Email              string `xml:"email,omitempty" json:"email,omitempty" schema:"email,omitempty"`
+	MobilePhone        string `xml:"mobile-phone,omitempty" json:"mobile_phone,omitempty" schema:"mobile_phone,omitempty"`
+	AccountNumber      string `xml:"account-number,omitempty" json:"-" schema:"account_number,omitempty"`
 	AccountNumberLast4 string `xml:"account-number-last-4,omitempty" json:"account_number_last_4,omitempty" schema:"-"`
-	RoutingNumber string `xml:"routing-number,omitempty" json:"routing_number,omitempty" schema:"routing_number,omitempty"`
+	RoutingNumber      string `xml:"routing-number,omitempty" json:"routing_number,omitempty" schema:"routing_number,omitempty"`
 }
 
 const (
