@@ -1,25 +1,28 @@
 package braintree
 
 type Transaction struct {
-	XMLName            string              `xml:"transaction"`
-	Id                 string              `xml:"id,omitempty"`
-	CustomerID         string              `xml:"customer-id,omitempty"`
-	Status             string              `xml:"status,omitempty"`
-	Type               string              `xml:"type,omitempty"`
-	Amount             float64             `xml:"amount"`
-	OrderId            string              `xml:"order-id,omitempty"`
-	PaymentMethodToken string              `xml:"payment-method-token,omitempty"`
-	MerchantAccountId  string              `xml:"merchant-account-id,omitempty"`
-	PlanId             string              `xml:"plan-id,omitempty"`
-	EscrowStatus       string              `xml:"escrow-status,omitempty"`
-	CreditCard         *CreditCard         `xml:"credit-card,omitempty"`
-	Customer           *Customer           `xml:"customer,omitempty"`
-	BillingAddress     *Address            `xml:"billing,omitempty"`
-	ShippingAddress    *Address            `xml:"shipping,omitempty"`
-	Options            *TransactionOptions `xml:"options,omitempty"`
-	ServiceFeeAmount   float64             `xml:"service-fee-amount,attr,omitempty"`
-	CreatedAt          string              `xml:"created-at,omitempty"`
-	UpdatedAt          string              `xml:"updated-at,omitempty"`
+	XMLName                         string              `xml:"transaction"`
+	Id                              string              `xml:"id,omitempty"`
+	CustomerID                      string              `xml:"customer-id,omitempty"`
+	Status                          string              `xml:"status,omitempty"`
+	Type                            string              `xml:"type,omitempty"`
+	Amount                          float64             `xml:"amount"`
+	OrderId                         string              `xml:"order-id,omitempty"`
+	PaymentMethodToken              string              `xml:"payment-method-token,omitempty"`
+	MerchantAccountId               string              `xml:"merchant-account-id,omitempty"`
+	PlanId                          string              `xml:"plan-id,omitempty"`
+	EscrowStatus                    string              `xml:"escrow-status,omitempty"`
+	ProcessorResponseText           string              `xml:"processor-response-text,omitempty"`
+	ProcessorSettlementResponseText string              `xml:"processor-settlement-response-text,omitempty"`
+	GatewayRejectedReason           string              `xml:"gateway-rejection-reason,omitempty"`
+	CreditCard                      *CreditCard         `xml:"credit-card,omitempty"`
+	Customer                        *Customer           `xml:"customer,omitempty"`
+	BillingAddress                  *Address            `xml:"billing,omitempty"`
+	ShippingAddress                 *Address            `xml:"shipping,omitempty"`
+	Options                         *TransactionOptions `xml:"options,omitempty"`
+	ServiceFeeAmount                float64             `xml:"service-fee-amount,attr,omitempty"`
+	CreatedAt                       string              `xml:"created-at,omitempty"`
+	UpdatedAt                       string              `xml:"updated-at,omitempty"`
 }
 
 // TODO: not all transaction fields are implemented yet, here are the missing fields (add on demand)
