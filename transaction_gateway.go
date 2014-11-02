@@ -56,6 +56,18 @@ func (g *TransactionGateway) Void(id string) (*Transaction, error) {
 	return nil, &invalidResponseError{resp}
 }
 
+func (g *TransactionGateway) Refund(id string) (*Transaction, error) {
+	resp, err := g.execute("PUT", "transactions/"+id+"/refund", nil)
+	if err != nil {
+		return nil, err
+	}
+	switch resp.StatusCode {
+	case 200:
+		return resp.transaction()
+	}
+	return nil, &invalidResponseError{resp}
+}
+
 // Find finds the transaction with the specified id.
 func (g *TransactionGateway) Find(id string) (*Transaction, error) {
 	resp, err := g.execute("GET", "transactions/"+id, nil)
