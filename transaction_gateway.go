@@ -56,8 +56,14 @@ func (g *TransactionGateway) Void(id string) (*Transaction, error) {
 	return nil, &invalidResponseError{resp}
 }
 
-func (g *TransactionGateway) Refund(id string) (*Transaction, error) {
-	resp, err := g.execute("PUT", "transactions/"+id+"/refund", nil)
+func (g *TransactionGateway) Refund(id string, amount ...float64) (*Transaction, error) {
+	var tx *Transaction
+	if len(amount) > 0 {
+		tx = &Transaction{
+			Amount: amount[0],
+		}
+	}
+	resp, err := g.execute("POST", "transactions/"+id+"/refund", tx)
 	if err != nil {
 		return nil, err
 	}
