@@ -50,6 +50,8 @@ func (g *TransactionGateway) Void(id string) (*Transaction, error) {
 		return nil, err
 	}
 	switch resp.StatusCode {
+	case 201:
+		fallthrough
 	case 200:
 		return resp.transaction()
 	}
@@ -68,6 +70,8 @@ func (g *TransactionGateway) Refund(id string, amount ...float64) (*Transaction,
 		return nil, err
 	}
 	switch resp.StatusCode {
+	case 201:
+		fallthrough
 	case 200:
 		return resp.transaction()
 	}
