@@ -47,10 +47,10 @@ func TestCreditCard(t *testing.T) {
 	t.Log(card2)
 
 	if card2.Token != card.Token {
-		t.Fatal()
+		t.Fatal("assertion failed")
 	}
 	if card2.CardType != "MasterCard" {
-		t.Fatal()
+		t.Fatal("assertion failed")
 	}
 
 	// Delete

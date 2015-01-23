@@ -4,7 +4,7 @@ type MerchantAccount struct {
 	XMLName                 string                         `xml:"merchant-account,omitempty" json:"-" schema:"-"`
 	Id                      string                         `xml:"id,omitempty" json:"id" schema:"id"`
 	MasterMerchantAccountId string                         `xml:"master-merchant-account-id,omitempty" json:"-" schema:"-"`
-	TOSAccepted             bool                           `xml:"tos_accepted,omitempty" json: "-"`
+	TOSAccepted             bool                           `xml:"tos_accepted,omitempty" json:"-"`
 	Individual              *MerchantAccountPerson         `xml:"individual,omitempty" json:"individual" schema:"individual"`
 	Business                *MerchantAccountBusiness       `xml:"business,omitempty" json:"business" schema:"business"`
 	FundingOptions          *MerchantAccountFundingOptions `xml:"funding,omitempty" json:"funding" schema:"funding"`

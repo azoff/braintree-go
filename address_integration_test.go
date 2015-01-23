@@ -41,52 +41,52 @@ func TestAddress(t *testing.T) {
 	t.Log(addr2)
 
 	if addr2.Id == "" {
-		t.Fatal()
+		t.Fatal("assertion failed")
 	}
 	if addr2.CustomerId != customer.Id {
-		t.Fatal()
+		t.Fatal("assertion failed")
 	}
 	if addr2.FirstName != addr.FirstName {
-		t.Fatal()
+		t.Fatal("assertion failed")
 	}
 	if addr2.LastName != addr.LastName {
-		t.Fatal()
+		t.Fatal("assertion failed")
 	}
 	if addr2.Company != addr.Company {
-		t.Fatal()
+		t.Fatal("assertion failed")
 	}
 	if addr2.StreetAddress != addr.StreetAddress {
-		t.Fatal()
+		t.Fatal("assertion failed")
 	}
 	if addr2.ExtendedAddress != addr.ExtendedAddress {
-		t.Fatal()
+		t.Fatal("assertion failed")
 	}
 	if addr2.Locality != addr.Locality {
-		t.Fatal()
+		t.Fatal("assertion failed")
 	}
 	if addr2.Region != addr.Region {
-		t.Fatal()
+		t.Fatal("assertion failed")
 	}
 	if addr2.PostalCode != addr.PostalCode {
-		t.Fatal()
+		t.Fatal("assertion failed")
 	}
 	if addr2.CountryCodeAlpha2 != addr.CountryCodeAlpha2 {
-		t.Fatal()
+		t.Fatal("assertion failed")
 	}
 	if addr2.CountryCodeAlpha3 != addr.CountryCodeAlpha3 {
-		t.Fatal()
+		t.Fatal("assertion failed")
 	}
 	if addr2.CountryCodeNumeric != addr.CountryCodeNumeric {
-		t.Fatal()
+		t.Fatal("assertion failed")
 	}
 	if addr2.CountryName != addr.CountryName {
-		t.Fatal()
+		t.Fatal("assertion failed")
 	}
 	if addr2.CreatedAt == "" {
-		t.Fatal()
+		t.Fatal("assertion failed")
 	}
 	if addr2.UpdatedAt == "" {
-		t.Fatal()
+		t.Fatal("assertion failed")
 	}
 
 	err = testGateway.Address().Delete(customer.Id, addr2.Id)
