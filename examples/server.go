@@ -17,7 +17,7 @@ package main
 
 import (
 	"fmt"
-	braintree "github.com/azoff/braintree-go"
+	"github.com/azoff/braintree-go"
 	"html/template"
 	"net/http"
 	"os"
